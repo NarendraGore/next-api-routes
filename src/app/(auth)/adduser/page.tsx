@@ -54,7 +54,7 @@ export default function AddUserForm() {
 
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
-              age
+              Age
             </label>
             <input
               type="number"
@@ -65,7 +65,7 @@ export default function AddUserForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
                 City
@@ -90,3 +90,4 @@ export default function AddUserForm() {
     </div>
   );
 }
+
