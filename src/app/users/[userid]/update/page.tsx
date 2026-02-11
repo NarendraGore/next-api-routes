@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function UpdateUserForm({
@@ -24,7 +25,7 @@ export default function UpdateUserForm({
       setCity(userDetails.result.city);
     };
     getUserDetails();
-  }, []);
+  }, [userid]);
 
   const updateUser = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,11 +38,14 @@ export default function UpdateUserForm({
     console.log("Update response", result);
 
     if (result.success) {
-      alert("User updated successfully!");
+      confirm("User updated successfully!");
+      router.push("/users/" + userid);
     } else {
       alert("Failed to update user.");
     }
   };
+
+  const router = useRouter();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4">
